@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+<!--自动扫描控制器-->
+    <context:component-scan base-package="edu.exam.online.professional"/>
+    <!--控制器映射器和控制器适配器-->
+    <mvc:annotation-driven />
+    <mvc:default-servlet-handler/>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**" />
+            <mvc:exclude-mapping path="/examinee/login.jhtml"/>
+            <bean class="edu.exam.online.professional.utils.InitUserInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+
+    <!--不过滤静态文件 与web.xml的tomcat default 是以一个效果-->
+   <!-- <mvc:resources location="/" mapping="/**/*.html"/>
+    <mvc:resources location="/" mapping="/**/*.htm"/>
+    <mvc:resources location="/" mapping="/**/*.js"/>
+    <mvc:resources location="/" mapping="/**/*.css"/>
+    <mvc:resources location="/" mapping="/**/*.png"/>
+    <mvc:resources location="/" mapping="/**/*.gif"/>
+    <mvc:resources location="/" mapping="/**/*.jpg"/>
+    <mvc:resources location="/" mapping="/**/*.woff"/>
+    <mvc:resources location="/" mapping="/**/*.ttf"/>
+    <mvc:resources location="/" mapping="/**/*.ico"/>-->
+</beans>

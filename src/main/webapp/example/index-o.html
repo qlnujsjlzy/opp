@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script type="text/javascript" src="../skins/js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+ <div id="demo">qwe</div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function(){
+            $.ajax({
+                type: "GET",
+                url: global_RootPath+"/hello.jhtml",
+                dataType:"json",
+                success: function(data){
+                    console.info(data);
+                    $("#demo").append(data.name);
+                },
+                error:function(msg){
+                    console.info(msg);
+                }
+            });
+    });
+</script>

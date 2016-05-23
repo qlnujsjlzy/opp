@@ -1,0 +1,10 @@
+.red{
+   color:red;
+}
+.center{
+   text-align: center;
+}
+/*去鼠标在链接上时显示下划线*/
+a:hover{
+   text-decoration:none;
+}

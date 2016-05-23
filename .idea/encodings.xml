@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/edu/exam/online/professional/utils/MD5Util.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/edu/exam/online/professional/utils/SessionUser.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/edu/exam/online/professional/service/impl/ExamineegroupServiceImplTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/assets/js/main.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/assets/js/opp-app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/assets/js/opp-examinee.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/assets/js/opp-login.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/Test.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

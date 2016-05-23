@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta charset="utf-8">
+    <title>在线考试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="guodandan">
+    <!--必备的Css-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/theme.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/alertify.css" rel="stylesheet">
+    <link href="assets/css/opp-app.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    <link href="assets/css/jquery.dataTables.css" rel="stylesheet">
+    <style>
+        label.radio {
+            margin-left: 10px;
+        }
+
+        .main_container {
+             margin-left: 0px!important;
+            left: 0 !important;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <!-- navbar-->
+
+    <!--/ navbar-->
+    <div class="container-fluid">
+
+        <!-- Main window -->
+        <div class="main_container" id="tables_page">
+            <div class="row-fluid">
+                <h5 class="heading">
+                    <span id="countdown" >距离考试结束还有：<span id="time">100分00秒</span></span>&nbsp;
+                    <div class="btn-group pull-right" >
+                        <button class="btn" id="submit" ><i class="icon-ok"></i> 提交试卷</button>
+                    </div>
+
+                </h5>
+            </div>
+
+                <div class="row-fluid"  id="show_examlib_single" >
+                    <div class="widget widget-padding span12">
+                        <div class="widget-header">
+                            <i class="icon-list-alt"></i>  <h5 id="single_type">单选题</h5>
+                            <input id="single_total" type="hidden" value="">
+                            <div class="widget-buttons">
+                                <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i
+                                        class="icon-chevron-up"></i>   </a>
+                            </div>
+                        </div>
+                        <div class="widget-body">
+                            <div class="alert alert-info" style="margin:0;" id="single_examlib">
+                                <div>&nbsp;</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid" id="show_examlib_multiple" >
+                    <div class="widget widget-padding span12">
+                        <div class="widget-header">
+                            <i class="icon-list-alt"></i>  <h5 id="multiple_type">多选题</h5>
+                            <input id="multiple_total" type="hidden" value="">
+                            <div class="widget-buttons">
+                                <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i
+                                        class="icon-chevron-up"></i>   </a>
+                            </div>
+                        </div>
+                        <div class="widget-body">
+                            <div class="alert alert-info" style="margin:0;" id="multiple_examlib">
+                                <div>&nbsp;</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid"  id="show_examlib_judge" >
+                    <div class="widget widget-padding span12">
+                        <div class="widget-header">
+                            <i class="icon-list-alt"></i><h5 id="judge_type">判断题</h5>
+                            <input id="judge_total" type="hidden" value="">
+
+                            <div class="widget-buttons">
+                                <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i
+                                        class="icon-chevron-up"></i>  </a>
+                            </div>
+                        </div>
+                        <div class="widget-body">
+                            <div class="alert alert-info" style="margin:0;" id="judge_examlib">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+        <!-- /Main window -->
+
+    </div>
+    <!--/.fluid-container-->
+</div><!-- wrap ends-->
+
+<script type="text/javascript" src="assets/js/angular.js"></script>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="assets/js/raphael-min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src='assets/js/sparkline.js'></script>
+<script type="text/javascript" src='assets/js/morris.min.js'></script>
+<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.imagesloaded.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.facybox.js"></script>
+<script type="text/javascript" src="assets/js/jquery.alertify.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.knob.js"></script>
+<script type='text/javascript' src='assets/js/fullcalendar.min.js'></script>
+<script type='text/javascript' src='assets/js/jquery.gritter.min.js'></script>
+<script type="text/javascript" src="assets/js/realm.js"></script>
+<script type="text/javascript" src="assets/js/layer.js"></script>
+<script type="text/javascript" src="assets/js/opp-app.js"></script>
+<script type="text/javascript" src="assets/js/opp-openexam.js"></script>
+</body>
+</html>

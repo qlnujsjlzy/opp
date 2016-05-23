@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="off" monitorInterval="1800">
+
+	<properties>
+		<property name="LOG_HOME">/data/logs/opp</property>
+		<property name="ERROR_LOG_FILE_NAME">opp</property>
+	</properties>
+
+
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} -%msg%n" />
+		</Console>
+
+		<RollingRandomAccessFile name="ErrorLog"
+			fileName="${LOG_HOME}/${ERROR_LOG_FILE_NAME}.log" filePattern="${LOG_HOME}/${ERROR_LOG_FILE_NAME}.%d{yyyy-MM-dd-HH}.log">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss } -%msg%n" />
+			  <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="24"/>
+                <SizeBasedTriggeringPolicy size="20480 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="60"/>
+		</RollingRandomAccessFile>
+	</Appenders>
+
+	<Loggers>
+ 		<!--<AsyncLogger name="com.lenovo.m2.buy.purchase" level="info"
+			includeLocation="true">
+			<AppenderRef ref="ErrorLog" />
+			<AppenderRef ref="Console" />
+		</AsyncLogger>
+		<root level="info" includeLocation="true">
+			<appender-ref ref="Console" />
+		</root>-->
+
+		<asyncRoot level="trace">
+		 <appender-ref ref="ErrorLog" />
+		 <appender-ref ref="Console" />
+		</asyncRoot>
+	</Loggers>
+</Configuration>  

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="guodandan">
+    <!--必备的Css-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/theme.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/alertify.css" rel="stylesheet">
+    <link href="assets/css/opp-app.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="wrap">
+    <button id="sub">测试</button>
+</div>
+<!-- wrap ends-->
+<script type="text/javascript" src="assets/js/angular.js"></script>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="assets/js/layer.js"></script>
+<script type="text/javascript" src="assets/js/opp-app.js"></script>
+<script type="text/javascript" src="assets/js/opp-login.js"></script>
+<script>
+    $(function () {
+        $("#sub").click(function () {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url:"/examinee/test",
+                data: {lid:12312},
+                dataType: "json",
+                success: function (data) {
+                    alert("sdf")
+                }
+            });
+        })
+    })
+    
+</script>
+</body>
+</html>

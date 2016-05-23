@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta charset="utf-8">
+    <title>考生信息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="guodandan">
+    <!--必备的Css-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/theme.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/alertify.css" rel="stylesheet">
+    <link href="assets/css/opp-app.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    <link href="assets/css/jquery.dataTables.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrap">
+    <!-- navbar-->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <div ng-include src="'navbar.html'" ng-cloak></div>
+            </div>
+        </div>
+    </div>
+    <!--/ navbar-->
+    <div class="container-fluid">
+        <!-- Side menu -->
+        <div class="sidebar-nav nav-collapse collapse">
+            <div class="user_side clearfix">
+                <img src="assets/img/odinn.jpg" alt="Odinn god of Thunder">
+                <h5 id="currentuser"></h5>
+                <a href="setting.html"><i class="icon-cog"></i>   个人中心 </a>
+            </div>
+            <div ng-include src="'menu.html'"></div>
+        </div>
+        <!-- /Side menu -->
+
+        <!-- Main window -->
+        <div class="main_container" id="tables_page">
+            <div class="row-fluid">
+                <ul class="breadcrumb">
+                    <li><a href="#" id="index_admin_url">首页</a> <span class="divider">/</span></li>
+                    <li class="active">考生信息管理</li>
+                </ul>
+                <h4 class="heading">
+                  <!--  考生信息管理界面-->
+                    &nbsp;
+                    <div class="btn-group pull-right">
+                        <button class="btn" id="addexamineebtn"><i class="icon-plus"></i>   新增</button>
+                        <button class="btn" id="addexamineebtnRe"><i class="icon-reply"></i>   返回</button>
+                    </div>
+                </h4>
+            </div>
+
+
+            <!--新增考生信息-->
+            <div class="row-fluid" id="add_examinee" style="display: none">
+                <div class="widget widget-padding span12">
+                    <div class="widget-header">
+                        <i class=" icon-plus-sign"></i>  <h5>添加考生信息</h5>
+                        <div class="widget-buttons">
+                            <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i>  </a>
+                        </div>
+                    </div>
+                    <div class="widget-body">
+                        <div class="widget-forms clearfix">
+                            <form class="form-horizontal">
+                                <div class="control-group">
+                                    <label class="control-label">考生姓名</label>
+                                    <div class="controls">
+                                        <input class="span7" id="userid"  type="hidden">
+                                        <input class="span7" id="username"  type="text" placeholder="请输入考生姓名">
+                                        <span class="help-inline red">*</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">准考证号</label>
+                                    <div class="controls">
+                                        <input class="span7" id="ticketnumber" disabled="true"  type="text" placeholder="准考证号">
+                                        <span class="help-inline red">* 默认自动生成</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">身份证号</label>
+                                    <div class="controls">
+                                        <input class="span7" id="idcard"  type="text"  placeholder="请输入身份证号">
+                                        <span class="help-inline red">*</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">密码</label>
+                                    <div class="controls">
+                                        <input class="span7" id="password"  disabled="true" type="password" placeholder="密码">
+                                        <span class="help-inline red">* 默认身份证号后六位</span>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">性别</label>
+                                    <div class="controls">
+
+                                        <label class="radio">
+                                            <input type="radio" name="sex" id="sex0" value="0" checked>
+                                            男
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="sex" id="sex1" value="1">
+                                            女
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">手机号</label>
+                                    <div class="controls">
+                                        <input class="span7" id="phone"  type="text"  placeholder="请输入手机号">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">邮箱</label>
+                                    <div class="controls">
+                                        <input class="span7" id="email"  type="text"  placeholder="请输入邮箱">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">地址</label>
+                                    <div class="controls">
+                                        <input class="span7" id="address"  type="text"  placeholder="请输入地址">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">账号状态</label>
+                                    <div class="controls">
+
+                                        <label class="radio">
+                                            <input type="radio" name="actstatus" id="actstatus1" value="1" checked>
+                                            正常
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="actstatus" id="actstatus0" value="0">
+                                            锁定
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="widget-footer">
+                        <button class="btn btn-primary" id="btn_save">保存</button>
+                        <button class="btn" type="button" id="btn_cancel">取消</button>
+                    </div>
+                </div>
+            </div>
+            <!--编辑考生信息-->
+            <div class="row-fluid" id="edit_examinee" style="display: none">
+                <div class="widget widget-padding span12">
+                    <div class="widget-header">
+                        <i class="icon-list-alt"></i>  <h5>个人信息</h5>
+                        <div class="widget-buttons">
+                            <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i>  </a>
+                        </div>
+                    </div>
+                    <div class="widget-body">
+                        <div class="widget-forms clearfix">
+                            <form class="form-horizontal">
+                                <div class="control-group">
+                                    <label class="control-label">考生姓名</label>
+                                    <div class="controls">
+                                        <input class="span7" id="userid_e"  type="hidden">
+                                        <input class="span7" id="username_e"  type="text" placeholder="请输入考生姓名">
+                                        <span class="help-inline red">*</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">准考证号</label>
+                                    <div class="controls">
+                                        <input class="span7" id="ticketnumber_e" disabled="true"  type="text" placeholder="准考证号">
+                                        <span class="help-inline red">*</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">身份证号</label>
+                                    <div class="controls">
+                                        <input class="span7" id="idcard_e"  type="text"  placeholder="请输入身份证号">
+                                        <span class="help-inline red">*</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">重置密码</label>
+                                    <div class="controls">
+                                        <input class="span7" id="password_e"  type="password" placeholder="重置密码">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">性别</label>
+                                    <div class="controls">
+
+                                        <label class="radio">
+                                            <input type="radio" name="sex_e" id="sex0_e" value="0" >
+                                            男
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="sex_e" id="sex1_e" value="1">
+                                            女
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">手机号</label>
+                                    <div class="controls">
+                                        <input class="span7" id="phone_e"  type="text"  placeholder="请输入手机号">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">邮箱</label>
+                                    <div class="controls">
+                                        <input class="span7" id="email_e"  type="text"  placeholder="请输入邮箱">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">地址</label>
+                                    <div class="controls">
+                                        <input class="span7" id="address_e"  type="text"  placeholder="请输入地址">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="widget-footer">
+                        <button class="btn btn-primary" id="btn_save_e">保存</button>
+                        <button class="btn" type="button" id="btn_cancel_e">取消</button>
+                    </div>
+                </div>
+            </div>
+            <!--考生信息 列表-->
+            <div class="row-fluid" id="list_examinee">
+                <div class="widget widget-padding span12">
+                    <div class="widget-header">
+                        <i class="icon-group"></i>
+                        <h5>考生信息列表</h5>
+                        <div class="widget-buttons">
+                            <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i>  </a>
+                        </div>
+                    </div>
+                    <div class="widget-body">
+                        <table id="examinee_datatable" class="table table-striped table-bordered dataTable">
+                                <thead>
+                                <tr>
+                                    <th> 序号</th>
+                                    <th> 考生姓名</th>
+                                    <th> 准考证号</th>
+                                    <th> 身份证号</th>
+                                    <th> 手机号</th>
+                                    <th> 状态</th>
+                                    <th> 操作</th>
+                                </tr>
+                                </thead>
+                                 <tbody></tbody>
+                                <tfoot>
+                                <tr>
+                                    <th> 序号</th>
+                                    <th> 考生姓名</th>
+                                    <th> 准考证号</th>
+                                    <th> 身份证号</th>
+                                    <th> 手机号</th>
+                                    <th> 状态</th>
+                                    <th> 操作</th>
+                                </tr>
+                                </tfoot>
+                            </table>
+                    </div> <!-- /widget-body -->
+                </div> <!-- /widget -->
+            </div> <!-- /row-fluid -->
+        </div>
+        <!-- /Main window -->
+
+    </div><!--/.fluid-container-->
+</div><!-- wrap ends-->
+
+<script type="text/javascript" src="assets/js/angular.js"></script>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="assets/js/raphael-min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src='assets/js/sparkline.js'></script>
+<script type="text/javascript" src='assets/js/morris.min.js'></script>
+<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.imagesloaded.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.facybox.js"></script>
+<script type="text/javascript" src="assets/js/jquery.alertify.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.knob.js"></script>
+<script type='text/javascript' src='assets/js/fullcalendar.min.js'></script>
+<script type='text/javascript' src='assets/js/jquery.gritter.min.js'></script>
+<script type="text/javascript" src="assets/js/realm.js"></script>
+<script type="text/javascript" src="assets/js/layer.js"></script>
+<script type="text/javascript" src="assets/js/opp-app.js"></script>
+
+<script type="text/javascript" src="assets/js/opp-examinee.js"></script>
+</body>
+</html>

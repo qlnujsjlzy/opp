@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="guodandan">
+    <!--必备的Css-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/theme.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/alertify.css" rel="stylesheet">
+    <link href="assets/css/opp-app.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="wrap">
+    <!-- navbar-->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <div ng-include src="'navbar.html'"></div>
+            </div>
+        </div>
+    </div>
+    <!--/ navbar-->
+    <div class="container-fluid">
+        <!-- Side menu -->
+        <div class="sidebar-nav nav-collapse collapse">
+            <div class="user_side clearfix">
+                <img src="assets/img/odinn.jpg" alt="Odinn god of Thunder">
+                <h5 id="currentuser"></h5>
+                <a href="setting.html"><i class="icon-cog"></i>  个人中心</a>
+            </div>
+            <div ng-include src="'menu.html'"></div>
+        </div>
+        <!-- /Side menu -->
+
+        <!-- Main window -->
+        <div class="main_container" id="forms_page">
+            <div class="row-fluid">
+                <ul class="breadcrumb">
+                </ul>
+                <h4 class="heading">
+                    首页主界面
+                    <div class="btn-group pull-right">
+                    </div>
+                </h4>
+            </div>
+            <div class="row-fluid">
+                <div class="widget span12" style="overflow:visible;">
+                    <a class="btn btn-box bubble bubble-danger span2 tips" data-title="bubble-danger" href="examinee.html" data-bubble="0" id="countex"><i class="icon-user"></i>  <span>考生信息管理</span></a>
+                    <a class="btn btn-box span2" href="make_test.html"><i class="icon-plus-sign"></i>  <span>管理套题</span></a>
+                    <a class="btn btn-box bubble bubble-success span2 tips" data-title="bubble-success" href="examinee_batch.html" ><i class="icon-sitemap"></i>  <span>考生分批</span></a>
+                    <a class="btn btn-box span2" href="organization_exam.html"><i class="icon-calendar"></i>  <span>组织考试</span></a>
+                    <a class="btn btn-box bubble bubble-info span2 tips" data-title="bubble-info" href="analytics_exam.html" ><i class="icon-signal"></i>  <span>考试成绩统筹图</span></a>
+                    <a class="btn btn-box span2" href="analytics_examinee.html" data-bubble="2"><i class="icon-lightbulb"></i>  <span>考生成绩统筹图</span></a>
+
+                </div><!-- /widget -->
+            </div><!-- /row-fluid -->
+            <div class="row-fluid">
+                <div class="widget widget-padding span12">
+                    <div class="widget-header">
+                        <i class="icon-external-link"></i>  <h5>系统说明：</h5>
+                        <div class="widget-buttons">
+                            <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i>  </a>
+                        </div>
+                    </div>
+                    <div class="widget-body">
+                        <div class="alert alert-info" style="margin:0;">
+                            <strong>
+                                <h4>
+                                    该套系统是一套集考试题库管理、考试信息管理和考试成绩管理三位一体的综合性考试管理系统。
+                                </h4>
+                            </strong><br>
+                            <strong>
+                                It is a set of synthesizing system of examination management including the management of the exercise database and the management of examination score and the management of examination information.
+                            </strong><br><br>
+                            <strong><h4>前端使用技术：</h4></strong><br>
+                            <ul>
+                                <li><a href="javascritp:;">Bootstrap--响应式布局</a></li>
+                                <li><a href="javascritp:;">AngularJS--数据双向绑定</a></li>
+                                <li><a href="javascritp:;">jQuery--优秀的Javascript库</a></li>
+                                <li><a href="javascritp:;">及其基于jQuery的相关组件</a></li>
+                            </ul>
+                            <br>
+                            <strong><h4>后端使用技术：</h4></strong><br>
+                            <ul>
+                                <li><a href="javascritp:;">Spring MVC--MVC架构的Controller层</a></li>
+                                <li><a href="javascritp:;">Spring    --MVC架构的Sevice、Domain层</a></li>
+                                <li><a href="javascritp:;">MyBtais   --MVC架构的Dao层</a></li>
+                                <li><a href="javascritp:;">Mysql     --最流行开源的关系型数据库</a></li>
+                            </ul><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /Main window -->
+
+    </div><!--/.fluid-container-->
+</div><!-- wrap ends-->
+
+<script type="text/javascript" src="assets/js/angular.js"></script>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="assets/js/raphael-min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src='assets/js/sparkline.js'></script>
+<script type="text/javascript" src='assets/js/morris.min.js'></script>
+<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.imagesloaded.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.facybox.js"></script>
+<script type="text/javascript" src="assets/js/jquery.alertify.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.knob.js"></script>
+<script type='text/javascript' src='assets/js/fullcalendar.min.js'></script>
+<script type='text/javascript' src='assets/js/jquery.gritter.min.js'></script>
+<script type="text/javascript" src="assets/js/realm.js"></script>
+<script type="text/javascript" src="assets/js/layer.js"></script>
+<script type="text/javascript" src="assets/js/opp-app.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //考生总数
+        $.ajax({
+            type: "GET",
+            url: global_RootPath+"/examinee/count",
+            success: function (data) {
+                if(data.rc==0){
+                    $("#countex").attr("data-bubble",data.data);
+                }else {
+                    guodandan.notAuth();
+                }
+            }
+        })
+    })
+
+</script>
+</body>
+</html>
