@@ -207,6 +207,14 @@
 
     </dependencies>
     <build>
-        <finalName>opp</finalName>
+        <finalName>${artifactId}</finalName>
+        <resources>
+            <resource>
+                <!--directory: 资源所在的位置-->
+                <directory>src/main/resources</directory>
+                <!--filtering: 是否替换资源中的属性placehold-->
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
 </project>

@@ -8,6 +8,12 @@
 html, body{
   height: 100%;
 }
+.login-back{
+  padding-top: 45px;
+  font-family: 'Open Sans', sans-serif;
+  background-image: url("../img/login-img.jpg");
+  overflow-x: hidden;
+}
 body{
   padding-top: 45px;
   font-family: 'Open Sans', sans-serif;
@@ -106,11 +112,12 @@ input.knob{
   width: 30%;
 }
 .divider {
-  color: #656564;
+  color: #080807;
   font-size: 18px;
   line-height: 30px;
   text-align: center;
   margin: 10px 0 15px;
+  font-weight: bold;
 }
 .avatar-20{
   width:20px;
@@ -820,6 +827,10 @@ table.table thead .sorting_desc_disabled { background: url('../img/sort_desc_dis
   border-width: 0 1px 1px;
   border-color: #ccc;
   background-color: #fff;
+  background: rgba(216, 215, 215,.5);
+  -moz-box-shadow: 0 0 13px 3px rgba(216, 215, 215,.5);
+  -webkit-box-shadow: 0 0 13px 3px rgba(216, 215, 215,.5);
+  box-shadow: 0 0 13px 3px rgba(216, 215, 215,.5);
 }
 .widget-body .table strong{
   color:#E28271;

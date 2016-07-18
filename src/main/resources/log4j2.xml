@@ -34,9 +34,9 @@
 			<appender-ref ref="Console" />
 		</root>-->
 
-		<asyncRoot level="trace">
+		<asyncRoot level="info">
 		 <appender-ref ref="ErrorLog" />
 		 <appender-ref ref="Console" />
 		</asyncRoot>
 	</Loggers>
-</Configuration>  
+</Configuration>

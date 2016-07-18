@@ -34,7 +34,7 @@ guodandan.layerMsg = function (data, msg, fn) {
 guodandan.notAuth = function (data) {
     if (data.rc == 401) {
         layer.msg('用户尚未登录或缓存失效，请您登录后重试!', {icon: 4}, function () {
-            window.location.href = "login.html";
+            window.location.href = global_RootPath+"login.html";
         });
     }
     if (data.msg != "") {
@@ -96,7 +96,7 @@ guodandan.userCookie = function (key) {
     var currentCookie;
     if (_Cookie == "null" || _Cookie == undefined) {
         layer.msg('用户尚未授权或缓存失效，请您登录后重试!', {icon: 4}, function () {
-            window.location.href = "login.html";
+            window.location.href = global_RootPath+"login.html";
         });
         return;
     } else {
@@ -165,7 +165,7 @@ var countDown = function () {
 //获取倒计时
 var getInitTime = function (examid) {
     var init_timer = 0;
-    var url_time = "/records/initTimer/"+examid;
+    var url_time = global_RootPath+"/records/initTimer/"+examid;
     $.ajax({
         type: "GET",
         url: url_time,
@@ -185,7 +185,7 @@ $(function () {
         if(cookieUse.type=="examinee"){
             if($.inArray(getUrlAuth(), urlArr)!=-1){
                 layer.msg('用户没有该权限!', {icon: 4,time:50}, function () {
-                    window.location.href = "index_examinee.html";
+                    window.location.href =global_RootPath+ "index_examinee.html";
                 });
             }
         }

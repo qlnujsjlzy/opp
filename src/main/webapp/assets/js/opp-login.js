@@ -29,7 +29,7 @@ $(function () {
         $.ajax({
             type: "POST",
             contentType: "application/json; charset=utf-8",
-            url:"/examinee/login",
+            url: global_RootPath+"/examinee/login",
             data: JSON.stringify(jsonData),
             dataType: "json",
             success: function (data) {
@@ -37,9 +37,9 @@ $(function () {
                     "登录成功", function () {
                         $.cookie('sessionUser',JSON.stringify(data.data),{expires:guodandan.cookieDate()});
                         if(data.data.type=="admin"){
-                            window.location.href = "/index_admin.html";
+                            window.location.href = global_RootPath+"/index_admin.html";
                         }else{
-                            window.location.href = "/index_examinee.html";
+                            window.location.href = global_RootPath+"/index_examinee.html";
                         }
 
 
